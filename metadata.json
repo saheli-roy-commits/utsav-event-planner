@@ -1,0 +1,6 @@
+{
+  "name": "Utsav",
+  "description": "A quiet event planner for weddings, birthdays, and community gatherings across India.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

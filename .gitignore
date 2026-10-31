@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Production builds
+dist/
+build/
+
+# Environment files and secrets (CRITICAL: Never commit secrets)
+.env
+.env.local
+.env.*.local
+.env*
+!.env.example
+
+# Logs and system files
+*.log
+.DS_Store
+coverage/

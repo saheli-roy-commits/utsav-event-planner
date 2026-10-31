@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+:root {
+  --bg-paper: #F3EDE2;
+  --bg-sheet: #EBE2D0;
+  --text-ink: #231F1A;
+  --text-muted: #6B6358;
+  --border-line: #CFC6B6;
+  --accent-brick: #9C3D2A;
+  --accent-marigold: #C98A1B;
+  --accent-green: #3E5C46;
+
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #231F1A;
+  background-color: #F3EDE2;
+}
+
+html, body {
+  background-color: var(--bg-paper);
+  color: var(--text-ink);
+  font-family: 'Source Sans 3', sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .serif-heading {
+  font-family: 'Libre Caslon Text', Georgia, serif;
+  font-weight: 400;
+}
+
+/* Strict zero-pill and zero shadow constraint */
+* {
+  border-radius: 0;
+  box-shadow: none !important;
+}
+
+/* Motion restriction: no hover animations or transitions. Only change cursor and underline on hover. */
+*, *::before, *::after {
+  transition: none !important;
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+}
+
+/* Inputs and interactive elements */
+input, select, textarea, button {
+  font-family: inherit;
+  color: var(--text-ink);
+  background-color: transparent;
+  border-radius: 0;
+}
+
+/* Visible focus outline in brick red for keyboard accessibility */
+:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+a:focus-visible,
+[role="button"]:focus-visible,
+[role="radio"]:focus-visible {
+  outline: 2px solid var(--accent-brick) !important;
+  outline-offset: 2px !important;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid var(--accent-brick);
+  outline-offset: 1px;
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Square checkboxes adhering to palette */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--border-line);
+  background-color: var(--bg-paper);
+  display: inline-grid;
+  place-content: center;
+  cursor: pointer;
+  margin: 0;
+  vertical-align: middle;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #3E5C46;
+  border-color: #3E5C46;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background-color: #EBE2D0;
+}
+
+/* Print styling */
+@media print {
+  body {
+    background-color: #fff !important;
+    color: #000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
